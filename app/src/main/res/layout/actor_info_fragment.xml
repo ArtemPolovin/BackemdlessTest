@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="actor"
+            type="com.example.backandlesstest.domain.models.ActorModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.actorinfo.ActorInfoFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_id"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image_actor_avatar"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="26dp"
+            app:loadingImage = "@{actor.avatar}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{actor.name}"
+            android:textColor="@color/white"
+            android:textSize="38sp"
+            android:textStyle="italic"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/image_actor_avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/text_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_age"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/constraint_layout_id"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_growth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_growth"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/text_age"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_date_of_birth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_date_of_birth"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/text_growth"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_citizenship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_citizenship"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/text_date_of_birth"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_age_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{actor.age}"
+        android:textSize="20sp"
+        android:padding="10dp"
+       app:layout_constraintTop_toTopOf="@id/text_age"
+        app:layout_constraintStart_toEndOf="@id/text_age"/>
+
+    <TextView
+        android:id="@+id/text_growth_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{actor.growth}"
+        android:textSize="20sp"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="@id/text_growth"
+        app:layout_constraintStart_toEndOf="@id/text_growth"/>
+
+    <TextView
+        android:id="@+id/text_date_of_birth_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{actor.date_of_birth}"
+        android:textSize="20sp"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="@id/text_date_of_birth"
+        app:layout_constraintStart_toEndOf="@id/text_date_of_birth"/>
+
+    <TextView
+        android:id="@+id/text_citizenship_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{actor.citizenship}"
+        android:textSize="20sp"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="@id/text_citizenship"
+        app:layout_constraintStart_toEndOf="@id/text_citizenship"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
